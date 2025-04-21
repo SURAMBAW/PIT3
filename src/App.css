@@ -1,38 +1,240 @@
-.App {
-  text-align: center;
-}
+/* App.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #1a202c;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Light Mode */
+.light-mode {
+  background: linear-gradient(to top right, #93c5fd, #fbbf24, #c084fc);
+  color: #1a202c;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Card */
+.card {
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  max-width: 500px;
+  width: 100%;
+  background-color: white;
+}
+
+/* Card Light and Dark Modes */
+.card-light {
+  background-color: white;
+  color: #1a202c;
+}
+
+.card-dark {
+  background-color: #2d3748;
+  color: #e2e8f0;
+}
+
+/* Header */
+.header {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #4f46e5;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Button */
+.button {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  padding: 0.25rem 0.5rem; /* Compact padding */
+  border-radius: 9999px;
+  font-size: 0.75rem; /* Smaller font size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  margin-top: 0.5rem; /* Reduced margin */
+  width: auto; /* Adjust width to fit content */
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px; /* Reduced letter spacing */
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Add Task Button */
+.button-dark {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  padding: 0.25rem 0.5rem; /* Compact padding */
+  font-size: 0.75rem; /* Smaller font size */
+  border-radius: 9999px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.button-dark:hover {
+  background: linear-gradient(135deg, #15803d, #16a34a);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Filter Buttons */
+.filter-btn {
+  padding: 0.25rem 0.75rem; /* Compact padding */
+  font-size: 0.75rem; /* Smaller font size */
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  margin: 0 0.25rem; /* Reduced margin */
+  border: 2px solid transparent;
+  background-color: #e5e7eb;
+  color: #1a202c;
+}
+
+.filter-btn-active {
+  background-color: #6366f1;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #6366f1;
+}
+
+.filter-btn-inactive {
+  background-color: #e5e7eb;
+  color: #1a202c;
+  border: 2px solid #d1d5db;
+}
+
+.filter-btn-inactive:hover {
+  background-color: #d1d5db;
+  transform: scale(1.05);
+}
+
+.filter-btn-active:hover {
+  background-color: #4f46e5;
+  transform: scale(1.05);
+}
+
+/* Input Field */
+.input-field {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 9999px;
+  border: 2px solid #d1d5db;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  background-color: #f9fafb;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 5px rgba(99, 102, 241, 0.5);
+}
+
+.input-field::placeholder {
+  color: #6b7280;
+  font-weight: 300;
+}
+
+/* Task List */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.todo-item:hover {
+  background-color: #f9fafb;
+  transform: scale(1.02);
+}
+
+.todo-text {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1a202c;
+}
+
+.todo-text-completed {
+  text-decoration: line-through;
+  color: #d1d5db;
+}
+
+/* Delete Button */
+.todo-delete {
+  color: #ef4444;
+  font-size: 1.25rem; /* Slightly smaller font size */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todo-delete:hover {
+  color: #dc2626;
+  transform: scale(1.1);
+}
+
+/* Centering the entire container */
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header {
+    font-size: 2rem;
+  }
+
+  .button {
+    padding: 0.5rem 1rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .todo-item {
+    padding: 1rem;
+  }
+
+  .todo-text {
+    font-size: 1rem;
   }
 }
