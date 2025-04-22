@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'; // Import the external CSS file
 
-const API_URL = 'https://tdfull.onrender.com';
+const API_URL = 'https://backendpit3.onrender.com/';
 
 function App() {
   const [todos, setTodos] = useState([]);
